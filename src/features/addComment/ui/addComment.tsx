@@ -98,10 +98,10 @@ export default function AddComment() {
                             <Box>
                                 <Avatar />
                             </Box>
-                            <Box sx={{ width: '100%' }}>
+                            <Box sx={{ width: '90%' }}>
                                 <TextField inputProps={{ ref: inputRef }} onFocus={handleFocus} onBlur={handleBlur} value={comment} onChange={handleChange} placeholder="your comment..." sx={{ borderRadius: '8px !important' }} fullWidth />
                             </Box>
-                            <Box sx={{ width: '4%' }}>
+                            <Box sx={{ width: '10%' }}>
                                 <Tooltip title="Add comment">
                                     <IconButton type="submit">
                                         <AddIcon />
