@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - main  # Укажите ветку, для которой будет выполняться CI
+      - main
   pull_request:
     branches:
       - main
