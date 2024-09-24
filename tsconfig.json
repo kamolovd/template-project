@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ES2022",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "sourceMap": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "@app/*": [
+        "app/*"
+      ],
+      "@features/*": [
+        "features/*"
+      ],
+      "@widgets/*": [
+        "widgets/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@entities/*": [
+        "entities/*"
+      ]
+    },
+    "types": [
+      "jest",
+      "node"
+    ], // Include Node types
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/*.test.ts"
+  ]
+}
