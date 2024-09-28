@@ -10,6 +10,7 @@ export const fetchComments = createAsyncThunk<IComment[], void>(
       throw new Error('Ошибка загрузки комментариев');
     }
     const responseJson = await response.json();
+    localStorage.setItem('comments-list', JSON.stringify(responseJson.comments));
     return responseJson.comments as IComment[];
   }
 );

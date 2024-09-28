@@ -4,7 +4,7 @@ import { IComment } from '@entities/Comment/types';
 import { fetchComments } from '../api/index.ts';
 
 const initialState: CommentsState = {
-  comments: [],
+  comments: JSON.parse(localStorage.getItem('comments-list')) || [],
   loading: false,
   error: null,
   status: 'idle',
@@ -16,9 +16,11 @@ const commentSlice = createSlice({
   reducers: {
     addComment: (state, { payload }: PayloadAction<IComment>): void => {
       state.comments.push(payload);
+      localStorage.setItem('comments-list', JSON.stringify(state.comments))
     },
     removeComment: (state, {payload}: PayloadAction<number>):void => {
       state.comments = state.comments.filter((item) => item.id !== payload);
+      localStorage.setItem('comments-list', JSON.stringify(state.comments))
     },
     setLoading(state, action: PayloadAction<boolean>) {
       state.loading = action.payload;

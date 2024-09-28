@@ -1,10 +1,10 @@
 import AddComment from '@features/addComment/ui/addComment';
-import {  Box, Snackbar } from '@mui/material';
+import { Box, Snackbar } from '@mui/material';
 import { useAppDispatch } from '@shared/hooks/useAppDispatch.ts';
 import { fetchComments } from '@entities/Comment/api/index.ts';
 import { commentsList } from '@entities/Comment/model/selectors.ts';
 import CommentList from '@widgets/CommentsList/ui/CommentsList';
-import  { useState } from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Loader from '@shared/ui/components/Loader/Loader';
@@ -15,7 +15,10 @@ function Home() {
     const [open, setOpen] = useState<boolean>(false);
 
     useEffect(() => {
-        dispatch(fetchComments());
+        if (!comments?.length) {
+            dispatch(fetchComments());
+        }
+
     }, [dispatch]);
 
     useEffect(() => {

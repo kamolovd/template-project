@@ -1,10 +1,10 @@
 import { Avatar, Box, CardHeader, IconButton, Paper, Tooltip } from "@mui/material";
 
 import { IComment } from "../types";
-import { generateColorComment } from "@shared/utils/generateColorComment";
 import { Close } from "@mui/icons-material";
 import { useAppDispatch } from "@shared/hooks/useAppDispatch";
 import { removeComment } from "../model";
+import stc from "string-to-color";
 
 
 export default function Comment({ id, body, user }: IComment) {
@@ -15,7 +15,7 @@ export default function Comment({ id, body, user }: IComment) {
             <Paper elevation={1} sx={{ position: 'relative' }}>
                 <CardHeader
                     avatar={
-                        <Avatar sx={{ bgcolor: generateColorComment()[500] }} aria-label="recipe">
+                        <Avatar sx={{ bgcolor: stc(user.fullName) }} aria-label="recipe">
                             R
                         </Avatar>
                     }
